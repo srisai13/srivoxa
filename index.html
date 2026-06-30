@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
-    <link rel="stylesheet" href="style.css?v=3">
+    <link rel="stylesheet" href="style.css?v=4">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body id="top">
     <div class="watermark-bg">Srivoxa</div>
     
 
@@ -19,15 +19,15 @@
             <img src="logo.png" alt="Logo" class="logo-icon">
             srivoxa<span class="dot"></span>
         </div>
-        <nav class="desktop-nav">
+        <nav class="desktop-nav-pill">
+            <a href="#top">Home</a>
             <a href="#services">Services</a>
             <a href="#portfolio">Projects</a>
             <a href="#pricing">Pricing</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-right">
-            <a href="https://wa.me/919606036717" class="btn-start" style="background: #25D366; border: none; color: white; font-weight: 600; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="#contact" class="btn-start" style="background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">Get Quote</a>
+            <a href="#contact" class="btn-get-started">Get Started</a>
             <button class="menu-btn">
                 <span></span>
                 <span></span>
@@ -48,45 +48,17 @@
         </div>
         <div class="hero-image-wrapper">
             <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Workstation" class="hero-image">
-            <div class="floating-card">
-                <i class="fas fa-check-circle" style="color: #25D366; font-size: 1.5rem;"></i>
-                <div>
-                    <strong>50+ Projects</strong>
-                    <span>Successfully Delivered</span>
-                </div>
-            </div>
         </div>
     </main>
 
-    <div class="trust-bar">
-        <div class="trust-scroll">
-            <div class="trust-list">
-                <div class="trust-item"><i class="fas fa-check-circle"></i> 50+ Projects Completed</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Fast Delivery</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Source Code Included</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Documentation Support</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Affordable Pricing</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> 24/7 Support</div>
-            </div>
-            <!-- Duplicate for seamless scrolling -->
-            <div class="trust-list">
-                <div class="trust-item"><i class="fas fa-check-circle"></i> 50+ Projects Completed</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Fast Delivery</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Source Code Included</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Documentation Support</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> Affordable Pricing</div>
-                <div class="trust-item"><i class="fas fa-check-circle"></i> 24/7 Support</div>
-            </div>
-        </div>
-    </div>
 
     <!-- Added Content Sections Below Hero -->
     <section id="about" class="section">
-        <div class="section-content" style="display: flex; align-items: center; gap: 50px; text-align: left; max-width: 1200px;">
-            <div class="about-image" style="flex: 1;">
+        <div class="section-content" style="display: flex; flex-wrap: wrap; align-items: center; gap: 50px; text-align: left; max-width: 1200px;">
+            <div class="about-image" style="flex: 1 1 400px;">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Team" style="width: 100%; border-radius: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
             </div>
-            <div class="about-text" style="flex: 1;">
+            <div class="about-text" style="flex: 1 1 400px;">
                 <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">About Srivoxa</h2>
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px;">
                     Srivoxa is a freelance software development service dedicated to helping students and businesses build modern, reliable, and scalable applications. We focus on quality code, timely delivery, and ongoing support.
@@ -94,7 +66,7 @@
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px;">
                     Our mission is to simplify the development process by providing end-to-end solutions, from requirement gathering and UI design to full-stack development and deployment. With years of experience and deep expertise across multiple technology stacks, we turn your ideas into reality.
                 </p>
-                <div style="display: flex; gap: 20px;">
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
                     <a href="#services" class="btn-primary" style="padding: 12px 25px; border-radius: 25px;">Our Services</a>
                     <a href="#contact" class="btn-work" style="padding: 12px 25px; border-radius: 25px;">Contact Us</a>
                 </div>
@@ -591,6 +563,6 @@
             }
         });
     </script>
-    <script src="script.js?v=3"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
