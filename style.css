@@ -1077,9 +1077,9 @@ body {
     padding-top: 30px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -1155,6 +1155,8 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 1.1rem;
+    text-decoration: none;
+    line-height: 1;
     transition: background 0.3s, transform 0.3s;
 }
 
@@ -1174,11 +1176,10 @@ body {
     color: white;
     border-radius: 50%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
     text-decoration: none;
-    font-size: 0.8rem;
     font-weight: 700;
     line-height: 1.2;
     box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
@@ -1265,12 +1266,16 @@ body {
     .contact-wrap {
         grid-template-columns: 1fr;
     }
+    .header-right .btn-start:not(:first-child) {
+        display: none;
+    }
 }
 
 @media (max-width: 768px) {
-    .hero-title { font-size: 3.5rem; }
+    .hero-title { font-size: 3rem; }
+    .section-title { font-size: 2.2rem; }
     .watermark-bg { font-size: 35vw; }
-    .awards { gap: 20px; }
+    .awards { gap: 20px; flex-wrap: wrap; justify-content: center; }
     .floating-btn {
         width: 70px;
         height: 70px;
@@ -1288,4 +1293,29 @@ body {
     }
     .header { padding: 20px; }
     .section { padding: 80px 20px; }
+    
+    /* Fix grid overflow on mobile */
+    .grid-3, .grid-2, .grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-links-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 30px;
+    }
+    
+    .newsletter-col {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title { font-size: 2.2rem; }
+    .hero-subtitle { font-size: 1rem; }
+    .section { padding: 60px 15px; }
+    .portfolio-filters { flex-direction: column; align-items: center; }
+    .faq-question { font-size: 1rem; padding: 15px 20px; }
+    .faq-item.active .faq-answer { padding: 15px 20px; }
+    .contact-details p { font-size: 0.9rem; }
 }
