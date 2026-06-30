@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="watermark-bg">Srivoxa</div>
+    
+
+    <header class="header">
+        <div class="logo">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 12px;">
+                <img src="logo.png" alt="Logo" class="logo-icon">
+                srivoxa<span class="dot"></span>
+            </a>
+        </div>
+        <nav class="desktop-nav">
+            <a href="index.html#services">Services</a>
+            <a href="#portfolio" class="active">Projects</a>
+            <a href="index.html#pricing">Pricing</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="https://wa.me/919606036717" class="btn-start" style="background: #25D366; border: none; color: white; font-weight: 600; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="index.html#contact" class="btn-start" style="background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); font-weight: 600; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">Get Quote</a>
+            <button class="menu-btn">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+
+    <section id="portfolio" class="section bg-light" style="min-height: 100vh;">
+        <div class="section-content">
+            <div style="text-align: left; margin-bottom: 0px;">
+                <a href="index.html" class="btn-back">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+            <h2 class="section-title">Complete Projects</h2>
+            <p class="section-subtitle">Explore our full range of successful projects across different technologies.</p>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="java">Java & Spring</button>
+                <button class="filter-btn" data-filter="web">Web Dev</button>
+                <button class="filter-btn" data-filter="react">React & Node</button>
+            </div>
+
+            <div class="grid-3" id="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="project-card" data-category="java">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Student Management System</h3>
+                        <p class="project-desc">A comprehensive system to manage student records, attendance, and grading.</p>
+                        <div class="tech-tags"><span>Java</span><span>Spring Boot</span><span>MySQL</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="project-card" data-category="java">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Library Management</h3>
+                        <p class="project-desc">Automated library system for book tracking, issuing, and return management.</p>
+                        <div class="tech-tags"><span>Java Swing</span><span>MySQL</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="project-card" data-category="java">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Hospital Management</h3>
+                        <p class="project-desc">Complete digital solution for patient scheduling, billing, and doctor records.</p>
+                        <div class="tech-tags"><span>Spring Boot</span><span>Angular</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="project-card" data-category="react">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Employee Management</h3>
+                        <p class="project-desc">Internal company tool for HR to manage staff profiles, payroll, and leave.</p>
+                        <div class="tech-tags"><span>React</span><span>Node.js</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="project-card" data-category="react">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>E-Commerce Website</h3>
+                        <p class="project-desc">Fully functional online store with cart functionality and payment gateway.</p>
+                        <div class="tech-tags"><span>MERN Stack</span><span>Stripe</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Portfolio Website</h3>
+                        <p class="project-desc">Responsive personal portfolio design for freelancers and professionals.</p>
+                        <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 7 -->
+                <div class="project-card" data-category="react">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Expense Tracker</h3>
+                        <p class="project-desc">Personal finance dashboard to track daily expenses and visualize data.</p>
+                        <div class="tech-tags"><span>React</span><span>Chart.js</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 8 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Quiz Application</h3>
+                        <p class="project-desc">Interactive quiz platform with timed questions and dynamic scoring.</p>
+                        <div class="tech-tags"><span>Vanilla JS</span><span>CSS</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 9 -->
+                <div class="project-card" data-category="web">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Restaurant Website</h3>
+                        <p class="project-desc">Elegant landing page with a digital menu and online reservation system.</p>
+                        <div class="tech-tags"><span>Bootstrap</span><span>HTML5</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project 10 -->
+                <div class="project-card" data-category="java">
+                    <div class="project-img" style="background: url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=600&q=80') center/cover;"></div>
+                    <div class="project-info">
+                        <h3>Inventory System</h3>
+                        <p class="project-desc">Warehouse management software to track stock levels and supplier orders.</p>
+                        <div class="tech-tags"><span>Java</span><span>Spring</span><span>PostgreSQL</span></div>
+                        <div class="project-links">
+                            <a href="#" class="btn-link"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="#" class="btn-link"><i class="fab fa-github"></i> GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <footer class="main-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo">
+                    <img src="logo.png" alt="Logo" class="logo-icon footer-logo-icon">
+                    srivoxa<span class="dot"></span>
+                </div>
+                <p class="footer-desc">Custom web development, debugging, deployment, and technical guidance.</p>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <a href="#services">Services</a>
+                    <a href="#portfolio">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                </div>
+                <div class="footer-column newsletter-col">
+                    <h4>Subscribe</h4>
+                    <p>Get the latest updates and tech tips.</p>
+                    <form class="footer-form" onsubmit="event.preventDefault();">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit"><i class="fas fa-arrow-right"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2026 srivoxa. All rights reserved.</p>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:srivoxa@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#contact" class="floating-btn">SPEAK<br>TO US</a>
+
+    <div id="toast" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span>Message sent successfully! We'll get back to you soon.</span>
+    </div>
+
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+    
+    <script>
+        let submitted = false;
+        const form = document.querySelector('.contact-form');
+        const toast = document.getElementById('toast');
+        const iframe = document.getElementById('hidden_iframe');
+        const btn = form.querySelector('.btn-submit');
+        let originalBtnText = btn.innerHTML;
+
+        form.addEventListener('submit', () => {
+            submitted = true;
+            originalBtnText = btn.innerHTML;
+            btn.innerHTML = 'Sending...';
+            btn.style.opacity = '0.7';
+            // We do not disable the button here because it can block the form from submitting in some browsers if disabled during submit event
+        });
+
+        iframe.addEventListener('load', () => {
+            if (submitted) {
+                // Form was submitted and iframe loaded the response
+                toast.classList.add('show');
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                }, 4000);
+                form.reset();
+                
+                btn.innerHTML = originalBtnText;
+                btn.style.opacity = '1';
+                submitted = false;
+            }
+        });
+    </script>
+</body>
+</html>
