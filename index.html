@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services</title>
-    <link rel="stylesheet" href="style.css?v=6">
+    <title>Srivoxa | Home</title>
+    <link rel="stylesheet" href="main.css?v=18">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -86,8 +86,9 @@
         <nav class="desktop-nav-pill">
             <a href="#top">Home</a>
             <a href="#services">Services</a>
-            <a href="#portfolio">Projects</a>
+            <a href="#projects">Projects</a>
             <a href="#pricing">Pricing</a>
+            <a href="#tech-news">News</a>
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-right">
@@ -100,13 +101,16 @@
         <div class="mobile-nav-menu" id="navMenu">
             <a href="#top" class="nav-link">Home</a>
             <a href="#services" class="nav-link">Services</a>
-            <a href="#portfolio" class="nav-link">Projects</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#tech-news" class="nav-link">News</a>
             <a href="#pricing" class="nav-link">Pricing</a>
             <a href="#contact" class="nav-link">Contact</a>
         </div>
     </header>
 
-    <main class="hero">
+
+
+    <main id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">
                 Build Your Academic & <span class="gradient-text">Web Development</span> Projects with Confidence
@@ -114,7 +118,7 @@
             <p class="hero-subtitle">We provide custom web development, software development, debugging, deployment, documentation, and technical guidance for students and startups.</p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Get Started</a>
-                <a href="#portfolio" class="btn-work">View Projects &nearr;</a>
+                <a href="#projects" class="btn-work">View Projects &nearr;</a>
             </div>
         </div>
         <div class="hero-image-wrapper">
@@ -243,7 +247,7 @@
         </div>
     </section>
 
-    <section id="portfolio" class="section bg-light">
+    <section id="projects" class="section bg-light">
         <div class="section-content">
             <h2 class="section-title">Our Projects</h2>
             <p class="section-subtitle">Explore our recent projects.</p>
@@ -301,34 +305,34 @@
             <h2 class="section-title">Development Process</h2>
             <p class="section-subtitle">How we bring your ideas to life.</p>
             
-            <div class="process-timeline">
+            <div class="process-timeline horizontal">
                 <div class="process-step">
-                    <div class="step-number">1</div>
-                    <h4>Requirement</h4>
-                </div>
-                <div class="process-step">
-                    <div class="step-number">2</div>
+                    <div class="step-icon"><i class="fas fa-clipboard-list"></i></div>
                     <h4>Planning</h4>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">3</div>
-                    <h4>UI Design</h4>
+                    <div class="step-icon"><i class="fas fa-search"></i></div>
+                    <h4>Analysis</h4>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">4</div>
+                    <div class="step-icon"><i class="fas fa-chart-line"></i></div>
+                    <h4>Design</h4>
+                </div>
+                <div class="process-step">
+                    <div class="step-icon"><i class="fas fa-keyboard"></i></div>
                     <h4>Development</h4>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">5</div>
+                    <div class="step-icon"><i class="fas fa-check-circle"></i></div>
                     <h4>Testing</h4>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">6</div>
+                    <div class="step-icon"><i class="fas fa-rocket"></i></div>
                     <h4>Deployment</h4>
                 </div>
                 <div class="process-step">
-                    <div class="step-number">7</div>
-                    <h4>Support</h4>
+                    <div class="step-icon"><i class="fas fa-tools"></i></div>
+                    <h4>Maintenance</h4>
                 </div>
             </div>
         </div>
@@ -385,6 +389,21 @@
         </div>
     </section>
 
+    <section id="tech-news" class="section">
+        <div class="section-content">
+            <h2 class="section-title">Live Tech News</h2>
+            <p class="section-subtitle">Real-time trending stories from Technews.</p>
+            <div class="slider-container">
+                <button class="slider-btn prev-btn" id="newsPrevBtn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <div class="news-slider" id="techNewsSlider">
+                    <!-- Tech News cards will be dynamically injected here by JS -->
+                    <p style="padding: 20px;">Loading live news...</p>
+                </div>
+                <button class="slider-btn next-btn" id="newsNextBtn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
     <section id="blog" class="section bg-light">
         <div class="section-content">
             <h2 class="section-title">Latest Insights</h2>
@@ -397,7 +416,7 @@
                         <span class="blog-date">Oct 12, 2026</span>
                         <h3>The Future of Web Development</h3>
                         <p>Explore the upcoming trends in web development, from AI-driven coding to advanced frameworks.</p>
-                        <a href="#" class="blog-link">Read More &rarr;</a>
+                        <a href="article-future-web.html" class="blog-link">Read More &rarr;</a>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -406,7 +425,7 @@
                         <span class="blog-date">Sep 28, 2026</span>
                         <h3>Why UI/UX Matters More Than Ever</h3>
                         <p>How exceptional user interfaces and experiences drive customer retention and business growth.</p>
-                        <a href="#" class="blog-link">Read More &rarr;</a>
+                        <a href="article-ui-ux.html" class="blog-link">Read More &rarr;</a>
                     </div>
                 </div>
                 <div class="blog-card">
@@ -415,7 +434,7 @@
                         <span class="blog-date">Sep 15, 2026</span>
                         <h3>Getting Started with SAP HANA</h3>
                         <p>A beginner's guide to understanding the power of SAP HANA and its enterprise capabilities.</p>
-                        <a href="#" class="blog-link">Read More &rarr;</a>
+                        <a href="article-sap-hana.html" class="blog-link">Read More &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -564,7 +583,7 @@
                 <div class="footer-column">
                     <h4>Company</h4>
                     <a href="#services">Services</a>
-                    <a href="#portfolio">Projects</a>
+                    <a href="#projects">Projects</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-column">
@@ -594,7 +613,27 @@
         </div>
     </footer>
 
-    <a href="#contact" class="floating-btn">SPEAK<br>TO US</a>
+    <div id="aiChatWindow" class="ai-chat-window">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i> Srivoxa AI
+            </div>
+            <button id="closeChatBtn" class="close-chat-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai-message">
+                Hello! I'm the Srivoxa AI Assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+            <button id="sendChatBtn" class="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button id="aiAssistantBtn" class="floating-btn">
+        <i class="fas fa-comment-dots" style="font-size: 1.8rem;"></i>
+    </button>
 
     <div id="toast" class="toast">
         <i class="fas fa-check-circle"></i>
@@ -634,7 +673,7 @@
             }
         });
     </script>
-    <script src="script.js?v=5"></script>
+    <script src="app.js?v=8"></script>
     <script>
         // Force mobile menu logic to bypass cache
         document.addEventListener('DOMContentLoaded', () => {

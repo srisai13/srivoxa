@@ -435,6 +435,9 @@ html, body {
     overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
     border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -449,36 +452,39 @@ html, body {
 }
 
 .project-info {
-    padding: 25px;
+    padding: 20px;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
 }
 
 .project-desc {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     margin-bottom: 15px;
-    line-height: 1.5;
+    line-height: 1.4;
 }
 
 .tech-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 6px;
+    margin-bottom: 15px;
 }
 
 .tech-tags span {
     background: #f0f4f8;
     color: var(--accent-color);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 600;
-    padding: 5px 10px;
-    border-radius: 5px;
+    padding: 4px 8px;
+    border-radius: 4px;
 }
 
 .project-links {
@@ -486,12 +492,13 @@ html, body {
     gap: 15px;
     border-top: 1px solid var(--border-color);
     padding-top: 15px;
+    margin-top: auto;
 }
 
 .btn-link {
     text-decoration: none;
     color: var(--text-color);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -506,7 +513,7 @@ html, body {
 /* Cards */
 .card {
     background: white;
-    padding: 40px;
+    padding: 25px;
     border-radius: 20px;
     text-align: left;
     transition: transform 0.3s;
@@ -519,13 +526,13 @@ html, body {
 }
 
 .card-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--accent-color);
     margin-bottom: 20px;
 }
 
 .card h3 {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     margin-bottom: 15px;
 }
 
@@ -537,7 +544,7 @@ html, body {
 
 .benefit-card {
     background: white;
-    padding: 30px 20px;
+    padding: 20px 15px;
     border-radius: 15px;
     text-align: center;
     border: 1px solid var(--border-color);
@@ -550,13 +557,13 @@ html, body {
 }
 
 .benefit-card i {
-    font-size: 2rem;
+    font-size: 1.6rem;
     color: var(--accent-color);
     margin-bottom: 15px;
 }
 
 .benefit-card h4 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 600;
 }
 
@@ -568,21 +575,20 @@ html, body {
     position: relative;
     max-width: 1200px;
     margin: 60px auto 0;
-    padding: 0;
+    padding: 20px 0; /* Add top and bottom padding to prevent clipping */
     overflow-x: auto; /* Allow scrolling on small screens */
-    padding-bottom: 20px;
 }
 
 .process-timeline::before {
     content: '';
     position: absolute;
-    top: 25px;
+    top: 60px; /* 40px (center of 80px circle) + 20px (padding-top) */
     left: 60px;
     right: 60px;
-    height: 2px;
-    background: rgba(0,0,0,0.1);
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), #007bff);
     z-index: 1;
-    min-width: 800px; /* Ensure line stays long enough if scrolled */
+    min-width: 900px; 
 }
 
 .process-step {
@@ -592,8 +598,8 @@ html, body {
     flex-direction: column;
     align-items: center;
     gap: 15px;
-    width: 120px;
-    min-width: 120px; /* Prevent squishing */
+    width: 130px;
+    min-width: 130px; 
     background: transparent;
     border: none;
     padding: 0;
@@ -603,27 +609,40 @@ html, body {
 
 .process-step:hover {
     transform: translateY(-5px);
-    box-shadow: none;
-    border-color: transparent;
 }
 
-.step-number {
-    width: 50px;
-    height: 50px;
-    background: #000;
-    color: white;
+.step-icon {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    color: #333;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    box-shadow: 0 0 0 8px white, 0 10px 20px rgba(0,0,0,0.1);
-    transition: background 0.3s, transform 0.3s;
+    font-size: 1.8rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 3px solid var(--accent-color);
+    transition: all 0.3s;
+    position: relative;
 }
 
-.process-step:hover .step-number {
+/* Arrow between steps */
+.process-step:not(:last-child)::after {
+    content: '\f0da'; /* FontAwesome right arrow */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 30px;
+    right: -25px;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    z-index: 3;
+}
+
+.process-step:hover .step-icon {
     background: var(--accent-color);
+    color: white;
     transform: scale(1.1);
 }
 
@@ -669,7 +688,7 @@ html, body {
 .review-card {
     background: white;
     border: 1px solid var(--border-color);
-    padding: 40px;
+    padding: 25px;
     border-radius: 20px;
     text-align: left;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -684,8 +703,8 @@ html, body {
     font-style: italic;
     color: var(--text-muted);
     line-height: 1.7;
-    margin: 20px 0;
-    font-size: 1.05rem;
+    margin: 15px 0;
+    font-size: 0.95rem;
 }
 
 .reviewer {
@@ -771,11 +790,11 @@ html, body {
 
 .blog-img {
     width: 100%;
-    height: 220px;
+    height: 180px;
 }
 
 .blog-content {
-    padding: 30px;
+    padding: 20px;
 }
 
 .blog-date {
@@ -787,7 +806,7 @@ html, body {
 }
 
 .blog-content h3 {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     margin-bottom: 15px;
     line-height: 1.3;
 }
@@ -815,7 +834,7 @@ html, body {
 .price-card {
     background: white;
     border: 1px solid var(--border-color);
-    padding: 40px;
+    padding: 25px;
     border-radius: 20px;
     text-align: left;
     position: relative;
@@ -840,12 +859,12 @@ html, body {
 }
 
 .price-card h3 {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
     margin-bottom: 10px;
 }
 
 .price {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     margin-bottom: 15px;
 }
@@ -1135,7 +1154,7 @@ html, body {
     padding: 10px 15px;
     outline: none;
     flex: 1;
-    font-size: 0.9rem;
+    font-size: 16px; /* Prevents iOS auto-zoom */
 }
 
 .footer-form button {
@@ -1189,24 +1208,181 @@ html, body {
     right: 40px;
     width: 65px;
     height: 65px;
-    font-size: 0.75rem;
     background-color: var(--accent-color);
     color: white;
     border-radius: 50%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
-    font-weight: 700;
-    line-height: 1.2;
     box-shadow: 0 10px 30px rgba(255, 51, 102, 0.3);
     z-index: 100;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
 }
 
 .floating-btn:hover {
     transform: scale(1.05);
+}
+
+/* AI Chat Window */
+.ai-chat-window {
+    position: fixed;
+    bottom: 115px;
+    right: 40px;
+    width: 350px;
+    max-width: 90vw;
+    height: 450px; /* Fixed ideal height */
+    max-height: calc(100vh - 200px); /* Safely clear the 80px navbar and 115px bottom */
+    background: #fff;
+    border-radius: 24px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    z-index: 99;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px) scale(0.95);
+    transition: opacity 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    border: none;
+}
+
+.ai-chat-window.show {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0) scale(1);
+}
+
+.chat-header {
+    background: linear-gradient(135deg, var(--accent-color), #ff6b8b);
+    color: #fff;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(255, 51, 102, 0.2);
+    z-index: 2;
+}
+
+.chat-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.chat-title i {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.close-chat-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.close-chat-btn:hover {
+    opacity: 1;
+}
+
+.chat-messages {
+    padding: 20px;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #f9fafc;
+}
+
+.message {
+    padding: 14px 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 85%;
+    animation: fadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.ai-message {
+    background: #ffffff;
+    color: #333;
+    align-self: flex-start;
+    border-radius: 18px 18px 18px 4px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.user-message {
+    background: linear-gradient(135deg, var(--accent-color), #ff6b8b);
+    color: #fff;
+    align-self: flex-end;
+    border-radius: 18px 18px 4px 18px;
+}
+
+.typing-indicator {
+    color: #888;
+    font-style: italic;
+    font-size: 0.85rem;
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 15px 20px 20px 20px;
+    background: #fff;
+    border-top: none;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.03);
+    z-index: 2;
+}
+
+.chat-input-area input {
+    flex: 1;
+    border: 1px solid transparent;
+    background: #f0f2f5;
+    padding: 14px 20px;
+    border-radius: 25px;
+    font-size: 16px; /* Exactly 16px prevents iOS Safari auto-zoom */
+    outline: none;
+    font-family: inherit;
+    transition: background 0.3s ease;
+    -webkit-appearance: none;
+}
+.chat-input-area input:focus {
+    background: #e8eaed; /* Simple background change instead of border zoom */
+}
+
+.send-chat-btn {
+    background: linear-gradient(135deg, var(--accent-color), #ff6b8b);
+    color: #fff;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    margin-left: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 51, 102, 0.3);
+}
+
+.send-chat-btn:hover {
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Toast Popup */
@@ -1375,6 +1551,91 @@ html, body {
     width: 24px;
 }
 
+/* Tech News Slider */
+.slider-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.news-slider {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 30px;
+    padding: 20px 0;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    scrollbar-width: none; /* Firefox */
+}
+
+.news-slider::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+.news-slider .blog-card {
+    min-width: 280px;
+    max-width: 280px;
+    scroll-snap-align: start;
+    flex: 0 0 auto;
+}
+
+.news-slider .blog-image img {
+    height: 160px; /* Smaller image */
+    width: 100%;
+    object-fit: cover;
+}
+
+.news-slider .blog-content {
+    padding: 20px; /* Less padding */
+}
+
+.news-slider .blog-content h3 {
+    font-size: 1.1rem; /* Smaller title */
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .news-slider .blog-card {
+        min-width: 240px;
+        max-width: 240px;
+    }
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.slider-btn:hover {
+    background: var(--accent-color);
+    color: white;
+    border-color: var(--accent-color);
+}
+
+.prev-btn {
+    left: -20px;
+}
+
+.next-btn {
+    right: -20px;
+}
 @media (max-width: 992px) {
     .desktop-nav-pill { display: none; }
     .menu-btn { display: flex; }
@@ -1391,6 +1652,9 @@ html, body {
         flex-direction: column;
         text-align: center;
         padding-top: 140px;
+        justify-content: flex-start;
+        min-height: auto;
+        padding-bottom: 60px;
     }
     .hero-content {
         margin-bottom: 40px;
@@ -1417,7 +1681,6 @@ html, body {
     .floating-btn {
         width: 55px;
         height: 55px;
-        font-size: 0.65rem;
         bottom: 20px;
         right: 20px;
     }
