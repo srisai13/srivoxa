@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms & Conditions - Srivoxa</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css?v=18">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,6 +25,32 @@
         Upon full payment of the agreed-upon project fee, the client retains the full rights and ownership to the final delivered source code and design assets. Srivoxa retains the right to display the work in our portfolio unless agreed otherwise.
     </p>
     
-    <a href="index.html" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">&larr; Back to Home</a>
+    <a href="index.html" style="color: var(--accent-color); text-decoration: none; font-weight: 600; font-size: 1.1rem;">&larr; Back to Home</a><div id="aiChatWindow" class="ai-chat-window">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i> Srivoxa AI
+            </div>
+            <button id="closeChatBtn" class="close-chat-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai-message">
+                Hello! I'm the Srivoxa AI Assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+            <button id="sendChatBtn" class="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button id="aiAssistantBtn" class="floating-btn">
+        <i class="fas fa-comment-dots" style="font-size: 1.8rem;"></i>
+    </button>
+    <script src="app.js?v=9"></script>
 </body>
 </html>
+
+
+
+
+

@@ -55,7 +55,8 @@
             border-bottom: 1px solid #f0f0f0;
         }
 
-        .mobile-nav-menu a:hover {
+        .mobile-nav-menu a:hover,
+        .mobile-nav-menu a.active {
             color: #ff3366;
         }
 
@@ -92,7 +93,7 @@
             <a href="#contact">Contact</a>
         </nav>
         <div class="header-right">
-            <a href="#contact" class="btn-get-started">Get Started</a>
+            <a href="#contact" class="btn-get-started">Register</a>
             <button class="menu-btn" id="newMobileMenuBtn">
                 <span></span>
                 <span></span>
@@ -108,8 +109,6 @@
         </div>
     </header>
 
-
-
     <main id="home" class="hero">
         <div class="hero-content">
             <h1 class="hero-title">
@@ -117,7 +116,6 @@
             </h1>
             <p class="hero-subtitle">We provide custom web development, software development, debugging, deployment, documentation, and technical guidance for students and startups.</p>
             <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Get Started</a>
                 <a href="#projects" class="btn-work">View Projects &nearr;</a>
             </div>
         </div>
@@ -125,7 +123,6 @@
             <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Workstation" class="hero-image">
         </div>
     </main>
-
 
     <!-- Added Content Sections Below Hero -->
     <section id="about" class="section">
@@ -135,22 +132,19 @@
             </div>
             <div class="about-text" style="flex: 1 1 400px;">
                 <h2 class="section-title" style="text-align: left; margin-bottom: 20px;">About Srivoxa</h2>
-                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px;">
+                                <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px;">
                     Srivoxa is a freelance software development service dedicated to helping students and businesses build modern, reliable, and scalable applications. We focus on quality code, timely delivery, and ongoing support.
                 </p>
                 <p style="font-size: 1.15rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 30px;">
-                    Our mission is to simplify the development process by providing end-to-end solutions, from requirement gathering and UI design to full-stack development and deployment. With years of experience and deep expertise across multiple technology stacks, we turn your ideas into reality.
+                    Our mission is to simplify the development process by providing SAP Soltuions end-to-end solutions, from requirement gathering and UI design to full-stack development and deployment. With years of experience and deep expertise across multiple technology stacks, we turn your ideas into reality.
                 </p>
                 <div style="display: flex; gap: 20px; flex-wrap: wrap;">
-                    <a href="#services" class="btn-primary" style="padding: 12px 25px; border-radius: 25px;">Our Services</a>
                     <a href="#contact" class="btn-work" style="padding: 12px 25px; border-radius: 25px;">Contact Us</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Added Content Sections Below Hero -->
-    
     <section id="services" class="section bg-light">
         <div class="section-content">
             <h2 class="section-title">Our Services</h2>
@@ -225,6 +219,9 @@
                 <div class="tech-item"><i class="fas fa-code" style="color: #007ACC;"></i><span>VS Code</span></div>
                 <div class="tech-item"><i class="fas fa-laptop-code" style="color: #000000;"></i><span>IntelliJ</span></div>
                 <div class="tech-item"><i class="fas fa-paper-plane" style="color: #FF6C37;"></i><span>Postman</span></div>
+                <div class="tech-item"><i class="fas fa-server" style="color: #008FD3;"></i><span>ECC</span></div>
+                <div class="tech-item"><i class="fas fa-database" style="color: #F0AB00;"></i><span>S/4 HANA</span></div>
+                <div class="tech-item"><i class="fas fa-code" style="color: #2C2255;"></i><span>Eclipse</span></div>
             </div>
         </div>
     </section>
@@ -343,52 +340,75 @@
             <h2 class="section-title">Pricing</h2>
             <p class="section-subtitle">Transparent and affordable plans.</p>
             
-            <div class="grid-4">
-                <div class="price-card">
-                    <h3>Starter</h3>
-                    <div class="price">₹1,999+</div>
-                    <p>Basic websites & assignments.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Single Page Design</li>
-                        <li><i class="fas fa-check"></i> Source Code Included</li>
-                    </ul>
-                    <a href="#contact" class="btn-outline-dark">Get Quote</a>
+            <div class="slider-container">
+                <button class="slider-btn prev-btn" id="pricingPrevBtn" aria-label="Previous"><i class="fas fa-chevron-left"></i></button>
+                <div class="pricing-slider" id="pricingSlider">
+                    <div class="price-card">
+                        <h3>Starter</h3>
+                        <div class="price">₹4,999+</div>
+                        <p>Basic websites & assignments.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Single Page Design</li>
+                            <li><i class="fas fa-check"></i> Source Code Included</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline-dark">Get Quote</a>
+                    </div>
+                    <div class="price-card popular">
+                        <div class="popular-tag">Most Popular</div>
+                        <h3>Professional</h3>
+                        <div class="price">₹7,999+</div>
+                        <p>Business websites & portfolios.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Multi-page Layout</li>
+                            <li><i class="fas fa-check"></i> Free Deployment</li>
+                        </ul>
+                        <a href="#contact" class="btn-solid-dark">Get Quote</a>
+                    </div>
+                    <div class="price-card">
+                        <h3>SAP SmartForms</h3>
+                        <div class="price">₹7,999+</div>
+                        <p>Reports & Forms automation.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Custom Layouts</li>
+                            <li><i class="fas fa-check"></i> Dynamic Data</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline-dark">Get Quote</a>
+                    </div>
+                    <div class="price-card">
+                        <h3>Premium</h3>
+                        <div class="price">₹9,999+</div>
+                        <p>Custom web & Java apps.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Full-stack Dev</li>
+                            <li><i class="fas fa-check"></i> DB & Documentation</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline-dark">Get Quote</a>
+                    </div>
+                    <div class="price-card">
+                        <h3>CDS Views / OData</h3>
+                        <div class="price">₹10,999+</div>
+                        <p>Advanced data modeling & APIs.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Complex Queries</li>
+                            <li><i class="fas fa-check"></i> Fiori Integration</li>
+                        </ul>
+                        <a href="#contact" class="btn-outline-dark">Get Quote</a>
+                    </div>
+                    <div class="price-card" style="background: #000; color: white;">
+                        <h3>Enterprise</h3>
+                        <div class="price" style="font-size: 1.8rem;">Custom Quote</div>
+                        <p style="color: #aaa;">Large scale applications.</p>
+                        <ul>
+                            <li><i class="fas fa-check" style="color: #fff;"></i> Dedicated Support</li>
+                            <li><i class="fas fa-check" style="color: #fff;"></i> Advanced Security</li>
+                        </ul>
+                        <a href="#contact" class="btn-solid-dark" style="background: #fff; color: #000;">Contact Us</a>
+                    </div>
                 </div>
-                <div class="price-card popular">
-                    <div class="popular-tag">Most Popular</div>
-                    <h3>Professional</h3>
-                    <div class="price">₹4,999+</div>
-                    <p>Business websites & portfolios.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Multi-page Layout</li>
-                        <li><i class="fas fa-check"></i> Free Deployment</li>
-                    </ul>
-                    <a href="#contact" class="btn-solid-dark">Get Quote</a>
-                </div>
-                <div class="price-card">
-                    <h3>Premium</h3>
-                    <div class="price">₹9,999+</div>
-                    <p>Custom web & Java apps.</p>
-                    <ul>
-                        <li><i class="fas fa-check"></i> Full-stack Dev</li>
-                        <li><i class="fas fa-check"></i> DB & Documentation</li>
-                    </ul>
-                    <a href="#contact" class="btn-outline-dark">Get Quote</a>
-                </div>
-                <div class="price-card" style="background: #000; color: white;">
-                    <h3>Enterprise</h3>
-                    <div class="price" style="font-size: 1.8rem;">Custom Quote</div>
-                    <p style="color: #aaa;">Large scale applications.</p>
-                    <ul>
-                        <li><i class="fas fa-check" style="color: #fff;"></i> Dedicated Support</li>
-                        <li><i class="fas fa-check" style="color: #fff;"></i> Advanced Security</li>
-                    </ul>
-                    <a href="#contact" class="btn-solid-dark" style="background: #fff; color: #000;">Contact Us</a>
-                </div>
+                <button class="slider-btn next-btn" id="pricingNextBtn" aria-label="Next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </div>
     </section>
-
     <section id="tech-news" class="section">
         <div class="section-content">
             <h2 class="section-title">Live Tech News</h2>
@@ -446,12 +466,13 @@
             <h2 class="section-title">Client Reviews</h2>
             <p class="section-subtitle">What our partners and students say about working with Srivoxa.</p>
             
-            <div class="grid-3">
-                <div class="review-card">
+            <div class="reviews-marquee-container">
+                <div class="reviews-marquee" id="reviewsMarquee">
+                    <div class="review-card">
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Srivoxa developed an amazing e-commerce website for my startup. The design is modern, and it loads incredibly fast. The team was supportive throughout the entire process!"</p>
                     <div class="reviewer">
-                        <div class="reviewer-avatar" style="background: var(--accent-color);">A</div>
+                        <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Arjun Mehta">
                         <div>
                             <h4>Arjun Mehta</h4>
                             <span>Startup Founder</span>
@@ -462,7 +483,7 @@
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"I was struggling with my final year Java project, and Srivoxa provided excellent guidance, clean code, and comprehensive documentation. Absolutely saved my semester!"</p>
                     <div class="reviewer">
-                        <div class="reviewer-avatar" style="background: #000;">N</div>
+                        <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Neha Sharma">
                         <div>
                             <h4>Neha Sharma</h4>
                             <span>Computer Science Student</span>
@@ -473,13 +494,47 @@
                     <div class="stars">★★★★★</div>
                     <p class="review-text">"Their expertise in React and Spring Boot is phenomenal. They resolved all our critical bugs and deployed the application flawlessly on AWS. Highly recommended for any complex web application."</p>
                     <div class="reviewer">
-                        <div class="reviewer-avatar" style="background: #333;">R</div>
+                        <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Rahul Desai">
                         <div>
                             <h4>Rahul Desai</h4>
                             <span>Technical Lead</span>
                         </div>
                     </div>
                 </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"The dashboard they built for our data analytics platform was top-notch. It was highly interactive, responsive, and completely transformed how we present data to our clients."</p>
+                    <div class="reviewer">
+                        <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80" alt="Vikram Singh">
+                        <div>
+                            <h4>Vikram Singh</h4>
+                            <span>Data Analyst</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"Incredible support and flawless execution! They delivered our ERP system migration ahead of schedule. The transition was smooth, and the new system is much faster."</p>
+                    <div class="reviewer">
+                        <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=150&q=80" alt="Priya Patel">
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <span>Operations Manager</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-card">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">"I needed a robust backend for my mobile app, and Srivoxa delivered perfectly. Their Node.js and MongoDB integration was seamless, and the APIs were extremely well-documented."</p>
+                    <div class="reviewer">
+                        <img class="reviewer-avatar" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80" alt="Karan Kapoor">
+                        <div>
+                            <h4>Karan Kapoor</h4>
+                            <span>Mobile App Developer</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     </section>
@@ -611,9 +666,7 @@
             </div>
             <p>&copy; 2026 srivoxa. All rights reserved.</p>
         </div>
-    </footer>
-
-    <div id="aiChatWindow" class="ai-chat-window">
+    </footer><div id="aiChatWindow" class="ai-chat-window">
         <div class="chat-header">
             <div class="chat-title">
                 <i class="fas fa-robot"></i> Srivoxa AI
@@ -673,7 +726,7 @@
             }
         });
     </script>
-    <script src="app.js?v=8"></script>
+    <script src="app.js?v=10"></script>
     <script>
         // Force mobile menu logic to bypass cache
         document.addEventListener('DOMContentLoaded', () => {
@@ -700,3 +753,10 @@
     </script>
 </body>
 </html>
+
+
+
+
+
+
+

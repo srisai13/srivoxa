@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
-    <link rel="stylesheet" href="style.css?v=7">
+    <link rel="stylesheet" href="main.css?v=18">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -91,7 +91,7 @@
             <a href="index.html#contact">Contact</a>
         </nav>
         <div class="header-right">
-            <a href="index.html#contact" class="btn-get-started">Get Started</a>
+            <a href="index.html#contact" class="btn-get-started">Register</a>
             <button class="menu-btn" id="newMobileMenuBtn">
                 <span></span>
                 <span></span>
@@ -208,7 +208,7 @@
             }
         });
     </script>
-    <script src="script.js?v=5"></script>
+    <script src="app.js?v=7"></script>
     <script>
         // Force mobile menu logic to bypass cache
         document.addEventListener('DOMContentLoaded', () => {
@@ -232,7 +232,32 @@
                 }
             }, 100);
         });
-    </script>
+    </script><div id="aiChatWindow" class="ai-chat-window">
+        <div class="chat-header">
+            <div class="chat-title">
+                <i class="fas fa-robot"></i> Srivoxa AI
+            </div>
+            <button id="closeChatBtn" class="close-chat-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message ai-message">
+                Hello! I'm the Srivoxa AI Assistant. How can I help you today?
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="Type a message..." autocomplete="off">
+            <button id="sendChatBtn" class="send-chat-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button id="aiAssistantBtn" class="floating-btn">
+        <i class="fas fa-comment-dots" style="font-size: 1.8rem;"></i>
+    </button>
 </body>
 </html>
+
+
+
+
+
 

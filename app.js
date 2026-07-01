@@ -328,8 +328,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 handleSend();
             }
         });
-        // 9. Dynamic Page Title Observer
+        // 9. Dynamic Page Title & Nav Active State Observer
         const sections = document.querySelectorAll('section, main#home');
+        const navLinks = document.querySelectorAll('.desktop-nav-pill a, .mobile-nav-menu a');
+        
         const observerOptions = {
             root: null,
             rootMargin: '-50% 0px -50% 0px',
@@ -347,6 +349,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         titleName = id.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
                     }
                     document.title = `Srivoxa | ${titleName}`;
+                    
+                    // Update Active Nav Links
+                    navLinks.forEach(link => {
+                        const href = link.getAttribute('href');
+                        if (href === `#${id}` || (id === 'home' && href === '#top')) {
+                            link.classList.add('active');
+                        } else {
+                            link.classList.remove('active');
+                        }
+                    });
                 }
             });
         }, observerOptions);
@@ -426,5 +438,28 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Auto-refresh the news every 5 minutes (300,000 milliseconds)
         setInterval(fetchLiveTechNews, 300000);
+    }
+    
+    // Pricing slider button logic
+    const pricingPrevBtn = document.getElementById('pricingPrevBtn');
+    const pricingNextBtn = document.getElementById('pricingNextBtn');
+    const pricingSlider = document.getElementById('pricingSlider');
+    
+    if (pricingPrevBtn && pricingNextBtn && pricingSlider) {
+        const pricingScrollAmount = 330; // Card width + gap
+        
+        pricingPrevBtn.addEventListener('click', () => {
+            pricingSlider.scrollBy({ left: -pricingScrollAmount, behavior: 'smooth' });
+        });
+        
+        pricingNextBtn.addEventListener('click', () => {
+            pricingSlider.scrollBy({ left: pricingScrollAmount, behavior: 'smooth' });
+        });
+    }
+
+    // 11. Duplicate Reviews for Endless Marquee
+    const reviewsMarquee = document.getElementById('reviewsMarquee');
+    if (reviewsMarquee) {
+        reviewsMarquee.innerHTML += reviewsMarquee.innerHTML;
     }
 });
