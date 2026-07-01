@@ -4,11 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
-    <link rel="stylesheet" href="style.css?v=4">
+    <link rel="stylesheet" href="style.css?v=5">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Force Mobile Navigation Styles to bypass cache */
+        .mobile-nav-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            flex-direction: column;
+            padding: 20px 5%;
+            gap: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            display: none !important;
+            border-top: 1px solid #eaeaea;
+            z-index: 9999;
+        }
+
+        @media (max-width: 992px) {
+            .mobile-nav-menu.active {
+                display: flex !important;
+            }
+        }
+
+        @media (min-width: 993px) {
+            .mobile-nav-menu, .mobile-nav-menu.active {
+                display: none !important;
+            }
+            .menu-btn, .menu-btn.active {
+                display: none !important;
+            }
+            .desktop-nav-pill {
+                display: flex !important;
+            }
+        }
+
+        .mobile-nav-menu a {
+            text-decoration: none;
+            color: #000;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .mobile-nav-menu a:hover {
+            color: #ff3366;
+        }
+
+        .menu-btn {
+            position: relative;
+            z-index: 10000;
+        }
+
+        .menu-btn.active span:nth-child(1) {
+            transform: translateY(4px) rotate(45deg);
+        }
+
+        .menu-btn.active span:nth-child(2) {
+            transform: translateY(-4px) rotate(-45deg);
+            width: 24px;
+        }
+    </style>
 </head>
 <body id="top">
     <div class="watermark-bg">Srivoxa</div>
@@ -28,10 +92,17 @@
         </nav>
         <div class="header-right">
             <a href="#contact" class="btn-get-started">Get Started</a>
-            <button class="menu-btn">
+            <button class="menu-btn" id="newMobileMenuBtn">
                 <span></span>
                 <span></span>
             </button>
+        </div>
+        <div class="mobile-nav-menu" id="navMenu">
+            <a href="#top" class="nav-link">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#portfolio" class="nav-link">Projects</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <a href="#contact" class="nav-link">Contact</a>
         </div>
     </header>
 
@@ -563,6 +634,30 @@
             }
         });
     </script>
-    <script src="script.js?v=4"></script>
+    <script src="script.js?v=5"></script>
+    <script>
+        // Force mobile menu logic to bypass cache
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const btn = document.getElementById('newMobileMenuBtn');
+                const menu = document.getElementById('navMenu');
+                if (btn && menu) {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        menu.classList.toggle('active');
+                        btn.classList.toggle('active');
+                    });
+                    
+                    menu.querySelectorAll('.nav-link').forEach(link => {
+                        link.addEventListener('click', () => {
+                            menu.classList.remove('active');
+                            btn.classList.remove('active');
+                        });
+                    });
+                }
+            }, 100);
+        });
+    </script>
 </body>
 </html>
