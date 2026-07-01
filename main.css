@@ -403,7 +403,7 @@ html, body {
 .section-subtitle {
     font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
@@ -725,6 +725,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    .portfolio-section { padding-top: 100px; }
     .reviews-marquee-container::before,
     .reviews-marquee-container::after {
         width: 50px;
@@ -910,6 +911,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    .portfolio-section { padding-top: 100px; }
     .pricing-slider .price-card {
         min-width: 85vw; /* Almost full width on mobile */
     }
@@ -1688,6 +1690,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    .portfolio-section { padding-top: 100px; }
     .news-slider .blog-card {
         min-width: 240px;
         max-width: 240px;
@@ -1726,11 +1729,19 @@ html, body {
 .next-btn {
     right: -20px;
 }
+
+.portfolio-section {
+    padding-top: 130px;
+}
 @media (max-width: 992px) {
     .desktop-nav-pill { display: none; }
     .menu-btn { display: flex; }
 }
 
+
+.portfolio-section {
+    padding-top: 130px;
+}
 @media (max-width: 992px) {
     .contact-wrap {
         grid-template-columns: 1fr;
@@ -1764,6 +1775,7 @@ html, body {
 }
 
 @media (max-width: 768px) {
+    .portfolio-section { padding-top: 100px; }
     .hero-title { font-size: 3rem; }
     .section-title { font-size: 2.2rem; }
     .watermark-bg { font-size: 35vw; }
@@ -1802,6 +1814,7 @@ html, body {
 }
 
 @media (max-width: 480px) {
+    .portfolio-section { padding-top: 80px; }
     .hero-title { font-size: 2.2rem; }
     .hero-subtitle { font-size: 1rem; }
     .section { padding: 40px 15px; }
@@ -1810,3 +1823,5 @@ html, body {
     .faq-item.active .faq-answer { padding: 15px 20px; }
     .contact-details p { font-size: 0.9rem; }
 }
+
+
