@@ -462,4 +462,31 @@ document.addEventListener('DOMContentLoaded', () => {
     if (reviewsMarquee) {
         reviewsMarquee.innerHTML += reviewsMarquee.innerHTML;
     }
+
+    // 12. Register Modal Logic
+    const openRegisterBtn = document.getElementById('openRegisterBtn');
+    const registerModal = document.getElementById('registerModal');
+    const closeRegisterModal = document.getElementById('closeRegisterModal');
+
+    if (openRegisterBtn && registerModal && closeRegisterModal) {
+        openRegisterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            registerModal.classList.add('active');
+        });
+
+        closeRegisterModal.addEventListener('click', () => {
+            registerModal.classList.remove('active');
+            const form = document.getElementById('registerForm');
+            if (form) form.reset();
+        });
+
+        // Close on outside click
+        registerModal.addEventListener('click', (e) => {
+            if (e.target === registerModal) {
+                registerModal.classList.remove('active');
+                const form = document.getElementById('registerForm');
+                if (form) form.reset();
+            }
+        });
+    }
 });
